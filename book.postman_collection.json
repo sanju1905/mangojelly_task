@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "448533b1-402f-4840-b6b0-a95019a9e132",
+		"name": "Comic Book API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/book/getalldetails",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "v1", "book", "getalldetails"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Comic Book By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/book/getcomicbookbyid/6711eda1ffa15e9c7caad64e",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "v1", "book", "getcomicbookbyid", "6711eda1ffa15e9c7caad64e"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Comic Book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/book/addcomicbook",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "v1", "book", "addcomicbook"]
+				},
+				"body": {
+					"mode": "raw",
+					"raw": "{\"bookName\":\"The Amazing Spider-Man\",\"authorName\":\"Stan Lee\",\"year_of_publication\":1963,\"price\":25.99,\"discount\":5,\"number_of_pages\":36,\"condition\":\"new\",\"description\":\"The first appearance of Spider-Man in his iconic red and blue suit.\"}"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Comic Book By ID",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/book/updatecomicbookbyid/6711eda1ffa15e9c7caad64e",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "v1", "book", "updatecomicbookbyid", "6711eda1ffa15e9c7caad64e"]
+				},
+				"body": {
+					"mode": "raw",
+					"raw": "{\"bookName\":\"The Amazing Spider-Man\",\"authorName\":\"Stan Lee\",\"year_of_publication\":1963,\"price\":30.00,\"discount\":5,\"number_of_pages\":36,\"condition\":\"new\",\"description\":\"The first appearance of Spider-Man with updated price.\"}"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Comic Book By ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/book/deletecomicbookbyid/6711eda1ffa15e9c7caad64f",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "v1", "book", "deletecomicbookbyid", "6711eda1ffa15e9c7caad64f"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/book/pagination?page=1&limit=5",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "v1", "book", "pagination"],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filtering",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/book/filter?authorName=Stan%20Lee&year_of_publication=2000&condition=new",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "v1", "book", "filter"],
+					"query": [
+						{
+							"key": "authorName",
+							"value": "Stan Lee"
+						},
+						{
+							"key": "year_of_publication",
+							"value": "2000"
+						},
+						{
+							"key": "condition",
+							"value": "new"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sorting",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/book/sort?sortBy=price&order=desc",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "v1", "book", "sort"],
+					"query": [
+						{
+							"key": "sortBy",
+							"value": "price"
+						},
+						{
+							"key": "order",
+							"value": "desc"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
